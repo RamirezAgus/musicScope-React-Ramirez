@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../Card/Card";
 import "./Container.css"
 
 const ItemListContainer = ({greeting}) => {
 
-const [amount, setAmount] = useState(0)
+
 
     return (
         <div className="landing">
             <span>{greeting}</span>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4"><Card /></div>
-                    <div className="col-4"></div>
+            <div className="contenedor">
+                <div>
+                    <div></div>
+                    <div><Card /></div>
+                    <div></div>
                 </div>
             </div>
         </div>

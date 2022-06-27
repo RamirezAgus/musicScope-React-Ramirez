@@ -4,6 +4,23 @@ import "./Container.css"
 
 const ItemListContainer = ({greeting}) => {
 
+    const products = [
+        {id:'01', name: 'Gibson LesPaul Custom', desc: 'Custom Made', price: '90000', stock: '8'}
+    ];
+
+    const getData = new Promise ((resolve, reject) => {
+
+        let condition = true;
+        setTimeout(() => {
+            if(condition){
+                resolve(products);
+            }else{
+                reject(console.log('salio mal :('));
+            }
+        }, 3000);
+    });
+    console.log(getData);
+
 
 
     return (

@@ -3,7 +3,7 @@ import "./Card.css"
 import gibsonLesPaul from "../../assets/images/gibsonLesPaul.png"
 import ItemCount from "../ItemCount/ItemCount";
 
-const Card = () => {
+const Card = ({productList}) => {
 
     const onAdd = (quantity) => {
         console.log(`Compraste ${quantity} unidades`);

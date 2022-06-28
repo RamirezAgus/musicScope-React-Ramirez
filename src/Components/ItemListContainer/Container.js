@@ -1,37 +1,25 @@
-import React from "react";
-import Card from "../Card/Card";
+import React, { useEffect, useState } from "react";
+import ItemList from "../ItemList/ItemList";
+import { getData } from "../../Mocks/fakeApi";
 import "./Container.css"
 
 const ItemListContainer = ({greeting}) => {
+    const [productList, setProductList] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const products = [
-        {id:'01', name: 'Gibson LesPaul Custom', desc: 'Custom Made', price: '90000', stock: '8'}
-    ];
-
-    const getData = new Promise ((resolve, reject) => {
-
-        let condition = true;
-        setTimeout(() => {
-            if(condition){
-                resolve(products);
-            }else{
-                reject(console.log('salio mal :('));
-            }
-        }, 3000);
-    });
-    console.log(getData);
-
+    useEffect(() => {
+        getData
+        .then((res) => setProductList(res))
+        .catch((error) => console.log('error'))
+        .finally(() => setLoading(false))
+    },[])
 
 
     return (
         <div className="landing">
             <span>{greeting}</span>
             <div className="contenedor">
-                <div>
-                    <div></div>
-                    <div><Card /></div>
-                    <div></div>
-                </div>
+                {loading ? <p>Cargando...</p> : <ItemList productList={productList} />}  
             </div>
         </div>
     )

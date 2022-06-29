@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { getData } from "../../Mocks/fakeApi";
 import "./Container.css"
+import Spinner from "../Spinner/Spinner";
 
 const ItemListContainer = ({greeting}) => {
     const [productList, setProductList] = useState([]);
@@ -10,16 +11,16 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         getData
         .then((res) => setProductList(res))
-        .catch((error) => console.log('error'))
+        .catch((error) => console.log(error))
         .finally(() => setLoading(false))
     },[])
 
 
     return (
         <div className="landing">
-            <span>{greeting}</span>
+            <span className="d-flex justify-content-center">{greeting}</span>
             <div className="contenedor">
-                {loading ? <p>Cargando...</p> : <ItemList productList={productList} />}  
+                {loading ? <Spinner /> : <ItemList productList={productList} />}  
             </div>
         </div>
     )

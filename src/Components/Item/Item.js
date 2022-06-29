@@ -4,7 +4,7 @@ import "./Item.css"
 
 const Item = ({products}) => {
 
-    const {name, description, price} = products
+    const {name, description, price, img} = products
 
     const onAdd = (quantity) => {
         console.log(`Compraste ${quantity} unidades`);
@@ -12,7 +12,7 @@ const Item = ({products}) => {
 
     return (
         <div className='card' style={{width:'20rem', margin:'.5rem'}}>
-            <img src='' className='card-img-top' alt=''></img>
+            <img src={img} className='card-img-top' alt=''></img>
             <div className='card-body'>
                 <p className='card-text'>{name}</p>
                 <p className='card-text'>{description}</p>

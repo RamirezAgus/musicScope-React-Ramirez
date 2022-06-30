@@ -17,11 +17,13 @@ const ItemListContainer = ({greeting}) => {
 
 
     return (
-        <div className="landing">
+        <div className="d-flex flex-column">
             <span className="d-flex justify-content-center">{greeting}</span>
-            <div className="contenedor">
+            <div className="d-flex flex-row justify-content-center">
+            
                 {loading ? <Spinner /> : <ItemList productList={productList} />}  
             </div>
+            
         </div>
     )
 }

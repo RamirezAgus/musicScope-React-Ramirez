@@ -11,7 +11,7 @@ const Item = ({products}) => {
     }
 
     return (
-        <div className='card' style={{width:'20rem', margin:'.5rem'}}>
+        <div className='card' style={{width:'10rem', margin:'.5rem'}}>
             <img src={img} className='card-img-top' alt=''></img>
             <div className='card-body'>
                 <p className='card-text'>{name}</p>

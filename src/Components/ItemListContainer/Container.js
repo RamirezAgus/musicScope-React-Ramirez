@@ -5,7 +5,7 @@ import "./Container.css"
 import Spinner from "../Spinner/Spinner";
 
 const ItemListContainer = ({greeting}) => {
-    const [productList, setProductList] = useState([]);
+    const [productList, setProductList] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

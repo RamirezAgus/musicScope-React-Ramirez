@@ -11,14 +11,14 @@ const Item = ({products}) => {
     }
 
     return (
-        <div className='card' style={{width:'10rem', margin:'.5rem'}}>
+        <div className='card align-items-center' style={{width:'10rem', margin:'1.5rem'}}>
             <img src={img} className='card-img-top' alt=''></img>
             <div className='card-body'>
                 <p className='card-text'>{name}</p>
                 <p className='card-text'>{description}</p>
                 <p className='card-text'>{price}</p>
             </div>
-            <button className='btn btn-primary'>Ver más</button>
+            <button className='btn btn-primary' id='boton-ver'>Ver más</button>
             <ItemCount initial={1} stock={5} onAdd={onAdd} />
         </div>
     )

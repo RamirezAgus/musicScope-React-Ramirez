@@ -3,6 +3,7 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/Container';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <NavBar />
       <div>
         <ItemListContainer greeting="Bienvenido a Music Scope" />
+        <ItemDetailContainer />
       </div>
     </div>
 

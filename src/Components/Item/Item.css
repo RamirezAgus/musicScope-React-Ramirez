@@ -1,0 +1,5 @@
+#boton-ver {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}

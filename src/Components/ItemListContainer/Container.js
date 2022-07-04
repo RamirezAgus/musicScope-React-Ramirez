@@ -18,7 +18,7 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <div className="d-flex flex-column">
-            <span className="d-flex justify-content-center">{greeting}</span>
+            <span className="d-flex justify-content-center h1 mt-2">{greeting}</span>
             <div className="d-flex flex-row justify-content-center">
             
                 {loading ? <Spinner /> : <ItemList productList={productList} />}  

@@ -3,21 +3,22 @@ import { getItem } from '../../Mocks/fakeApi';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 
+
 const ItemDetailContainer = () => {
 
-const [info, setInfo] = useState({});
+const [product, setProduct] = useState({});
 const [loading, setLoading] = useState(true);
 
 useEffect(() => {
     getItem
-    .then(res => setInfo(res))
+    .then(res => setProduct(res))
     .catch((error) => console.log(error))
     .finally(() => setLoading(false))
 },[])
 
     return (
         <div>
-            {loading ? <Spinner /> : <ItemDetail info={info} />}
+           {loading ? <Spinner /> : <ItemDetail product={product}/>}
         </div>
     )
 }

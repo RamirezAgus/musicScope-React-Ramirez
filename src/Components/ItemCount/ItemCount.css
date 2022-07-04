@@ -1,12 +1,56 @@
 .counter {
-    width: fit-content;
+    width: 100%;
     margin: auto;
-    padding: 1rem;
     text-align: center;
+    border-radius: 0.2rem;
     font-size: 1.5rem;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #b3bfc7;
+    border-radius: 0.2rem;
+}
+
 #count {
-    line-height: 1.2rem;
+    background: #4696cc;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border: none;
     font-size: 1.5rem;
+}
+
+#count:hover {
+    background: #1573ad;
+}
+
+#number {
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+}
+
+#add-cart {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#add {
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    border-radius: 0.2rem;
+    border: 1px solid #b3bfc7;
+}
+
+#buy-now {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#buy {
+    width: 100%;
+    padding: 10px 20px 10px 20px;
 }

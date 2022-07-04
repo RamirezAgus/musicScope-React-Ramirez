@@ -1,13 +1,28 @@
 import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+const ItemDetail = ({ product }) => {
 
-const ItemDetail = ({ info }) => {
+    const {name, price, description, img} = product;
+
+    const onAdd = (quantity) => {
+        console.log(`Compraste ${quantity} unidades`);
+    }
+
     return (
-        <div className='container'>
-            <div className='detail'>
-                <img className='detail-img' src={info.img} alt=''/>
-                <div className='content'>
-                    <h1>{info.name}</h1>
-                </div>
+        <div className='container card mb-3' style={{maxWidth:'640px'}}>
+            <div className='row no-gutters'>
+                <div className='col-md-4'>
+                    <img className='card-img' src={img} alt=''/>
+                </div>    
+                    <div className='col-md-8'>
+                        <div className='card-body'>
+                            <h2 className='card-tittle text-center'>{name}</h2>
+                            <h1>${price}</h1>
+                            <p className='card-text'>{description}</p>
+                            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+                        </div>
+                    </div>
+                
             </div>
         </div>
     )

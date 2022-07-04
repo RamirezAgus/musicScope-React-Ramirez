@@ -21,7 +21,7 @@ export const getData = new Promise ((resolve, reject) => {
         }else{
             reject(console.log('salio mal :('));
         }
-    }, 3000);
+    }, 2000);
 });
 
 //Para traer solo un producto
@@ -29,9 +29,10 @@ export const getItem = new Promise ((resolve, reject) => {
     let condition = true;
     setTimeout(() => {
         if(condition) {
-            resolve(products.id[1])
+            console.log('Promise resolved')
+            resolve(products.find(item => item.name === 'Gibson LesPaul Custom'))
         }else{
-            reject(console.log('No se encontro'));
+            reject(console.log('Dont resolved'));
         }
-    }, 2000);
+    }, 3000);
 });

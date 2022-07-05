@@ -1,8 +1,15 @@
-#navheader {
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     box-shadow: 0px 5px 4px 3px rgba(80, 71, 77, 0.1);
+
 }
 
-
+.nav-item {
+    margin: 10px;
+}
 
 #search {
     width: 30%;

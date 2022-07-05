@@ -1,34 +1,48 @@
 import React from "react";
-import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../Logo/Logo";
+import CartWidget from "../CartWidget/CartWidget"
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
-
+const categories = [
+    {
+        id: 1,
+        path: '/',
+        name: 'home',
+    },
+    {
+        id: 2,
+        path: '/category/instrumentos',
+        name: 'instrumentos',
+    },
+    {
+        id: 3,
+        path: '/category/amplificadores',
+        name: 'amplificadores',
+    },
+    {
+        id: 4,
+        path: '/category/efectos',
+        name: 'efectos',
+    },
+];
 
 const NavBar = () => {
     return (
-        <header className="navbar navbar-expand-lg" id="navheader">
-            <div className="container-fluid">
-                <Logo />
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Intrumentos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Amplificadores</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Efectos</a>
-                        </li>
-                    </ul>
-                </div>
+        
+        <nav>
+            <Logo />
+                <ul>
+                    {categories.map((cat) => (
+                    <Link to={cat.path} className="nav-item" key={cat.id}>{cat.name}</Link>
+                    ))}
+                </ul>
                 <div className="d-flex" id="search">
                     <input className="form-control me-1"  type="text" placeholder="Buscar Producto" aria-label="Search"/>
                 </div>
-            </div>
-            <CartWidget />
-        </header>
+                <CartWidget />
+        </nav>
+    
     )
 }
 

@@ -1,3 +1,4 @@
+export 
 const products = [
     {id:'01', name: 'Gibson LesPaul Custom', category: 'instrumentos', description: 'Custom Made', price: '90000', stock: '8', img:'/imgs/gibsonLesPaulCustom.png'},
     {id:'02', name: 'Gibson LesPaul Stardard', category: 'instrumentos', description: 'Standard Made', price: '70000', stock: '5', img:'/imgs/lespaulStandard.png'},
@@ -12,7 +13,27 @@ const products = [
     {id:'11', name: 'Boss DD-3', category: 'efectos', description: 'Delay pedal', price: '42000', stock: '8', img:'/imgs/bossDelay.png'}
 ];
 //Para traer los productos
-export const getData = new Promise ((resolve, reject) => {
+
+export const getData = (categoryId) => {
+    return new Promise ((resolve, reject) => {
+        const productosFiltrados = products.filter((prod) => prod.category === categoryId
+        );
+        setTimeout(() => {
+            categoryId ? resolve(productosFiltrados) : resolve(products);
+        }, 2000);
+    });
+};
+
+export const getItem = (id) => {
+    return new Promise ((resolve, reject) => {
+        const productoEncontrado = products.find((prod) => prod.id === Number(id)
+        );
+        setTimeout(() => {
+            resolve(productoEncontrado);
+        }, 3000);
+    });
+};
+/*export const getData = new Promise ((resolve, reject) => {
 
     let condition = true;
     setTimeout(() => {
@@ -22,10 +43,10 @@ export const getData = new Promise ((resolve, reject) => {
             reject(console.log('salio mal :('));
         }
     }, 2000);
-});
+});*/
 
 //Para traer solo un producto
-export const getItem = new Promise ((resolve, reject) => {
+/*export const getItem = new Promise ((resolve, reject) => {
     let condition = true;
     setTimeout(() => {
         if(condition) {
@@ -35,4 +56,4 @@ export const getItem = new Promise ((resolve, reject) => {
             reject(console.log('Dont resolved'));
         }
     }, 3000);
-});
+});*/

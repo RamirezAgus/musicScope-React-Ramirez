@@ -14,33 +14,18 @@ const ItemListContainer = ({greeting}) => {
         setLoading(true);
 
         getData(categoryId)
-        .then((res) => {
-            setProductList(res)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-        .finally(() => {
-            setLoading(false)
-        })
+        .then((res) => {setProductList(res)})
+        .catch((error) => {console.log(error)})
+        .finally(() => {setLoading(false)})
     },[categoryId]);
 
 
     return (
 
         <div className="d-flex flex-column">
-
-            {loading ? (<Spinner />) : (<ItemList productList={productList} />)}
-
-        </div>
-        /*<div className="d-flex flex-column">
             <span className="d-flex justify-content-center h1 mt-2">{greeting}</span>
-            <div className="d-flex flex-row justify-content-center">
-            
-                {loading ? <Spinner /> : <ItemList productList={productList} />}  
-            </div>
-            
-        </div>*/
+                {loading ? (<Spinner />) : (<ItemList productList={productList} />)}
+        </div>
     )
 }
 

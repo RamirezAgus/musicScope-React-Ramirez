@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 const ItemDetail = ({ product }) => {
 
-    const {name, price, description, img} = product;
+    const {name, price, description, img, stock} = product;
 
     const onAdd = (quantity) => {
         console.log(`Compraste ${quantity} unidades`);
@@ -19,7 +19,7 @@ const ItemDetail = ({ product }) => {
                             <h2 className='card-tittle text-center'>{name}</h2>
                             <h1>${price}</h1>
                             <p className='card-text'>{description}</p>
-                            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+                            <ItemCount initial={1} stock={stock} onAdd={onAdd} />
                         </div>
                     </div>
                 

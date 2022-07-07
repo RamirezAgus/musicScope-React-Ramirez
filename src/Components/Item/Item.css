@@ -1,3 +1,8 @@
+#cards:hover {
+    box-shadow: 9px 10px 8px -3px rgba(41,40,40,0.6);
+}
+
+
 #boton-ver {
     display: flex;
     justify-content: center;

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-const ItemDetail = ({ product }) => {
+import { Link } from 'react-router-dom';
 
+const ItemDetail = ({ product }) => {
+    const [goToCart, setGoToCart] = useState(false)
     const {name, price, description, img, stock} = product;
 
     const onAdd = (quantity) => {
-        console.log(`Compraste ${quantity} unidades`);
+        setGoToCart(true);
     }
 
     return (
@@ -19,7 +21,13 @@ const ItemDetail = ({ product }) => {
                             <h2 className='card-tittle text-center'>{name}</h2>
                             <h1>${price}</h1>
                             <p className='card-text'>{description}</p>
-                            <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+                            {
+                                goToCart 
+                                ? 
+                                <Link to='/cart'>Finalizar compra!</Link>
+                                : <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+                            }
+                            
                         </div>
                     </div>
                 

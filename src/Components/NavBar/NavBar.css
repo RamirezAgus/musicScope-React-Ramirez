@@ -11,6 +11,13 @@ nav {
     margin: 10px;
 }
 
+#select {
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
 #search {
     width: 30%;
 }

@@ -34,7 +34,7 @@ const NavBar = () => {
             <Logo />
                 <ul>
                     {categories.map((cat) => (
-                    <Link to={cat.path} className="nav-item" key={cat.id}>{cat.name}</Link>
+                    <Link to={cat.path} className="nav-item" id="select" key={cat.id}>{cat.name}</Link>
                     ))}
                 </ul>
                 <div className="d-flex" id="search">

@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import CartWidget from "../CartWidget/CartWidget"
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 const categories = [
     {
@@ -30,7 +31,7 @@ const categories = [
 const NavBar = () => {
     return (
         
-        <nav>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light" >
             <Logo />
                 <ul>
                     {categories.map((cat) => (
@@ -38,7 +39,7 @@ const NavBar = () => {
                     ))}
                 </ul>
                 <div className="d-flex" id="search">
-                    <input className="form-control me-1"  type="text" placeholder="Buscar Producto" aria-label="Search"/>
+                    <SearchBar />
                 </div>
                 <CartWidget />
         </nav>

@@ -12,6 +12,10 @@ const products = [
     {id: 10, name: 'Boss CH-1', category: 'efectos', description: 'Chorus pedal', price: '40000', stock: '8', img:'/imgs/bossChorus.png'},
     {id: 11, name: 'Boss DD-3', category: 'efectos', description: 'Delay pedal', price: '42000', stock: '8', img:'/imgs/bossDelay.png'}
 ];
+
+
+
+
 //Para traer los productos
 
 export const getData = (categoryId) => {

@@ -41,7 +41,7 @@ const NavBar = () => {
                 <div className="d-flex" id="search">
                     <SearchBar />
                 </div>
-                <CartWidget />
+                <Link className="d-flex align-items-center" to="/cart"><CartWidget /></Link>
         </nav>
     
     )

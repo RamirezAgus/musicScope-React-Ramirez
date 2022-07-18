@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { cartContext } from '../../Context/CartContext';
 import "./Item.css"
 
-const Item = ({products}) => {
 
-    const {id, name, description, img} = products
+
+const Item = ({ item }) => {
+
+    const { products } = useContext(cartContext);
+
+    const isInCart = products.some((prod) => prod.id === item.id)
 
     return (
         <div className='card align-items-center' id='cards' style={{width:'10rem', margin:'1.5rem'}}>
-            <img src={img} className='card-img-top' alt=''></img>
+            <img src={item.img} className='card-img-top' alt=''></img>
             <div className='card-body'>
-                <p className='card-text h5 text-center'>{name}</p>
-                <p className='card-text'>{description}</p>
+                <p className='card-text h5 text-center'>{item.name}</p>
+                <p className='card-text'>{item.description}</p>
             </div>
-            <Link to={`/detail/${id}`}  className='btn btn-primary mb-3' id='boton-ver'>Ver más</Link>
+            <Link to={`/detail/${item.id}`}  className='btn btn-primary mb-3' id='boton-ver'>Ver más</Link>
+            {isInCart && <h2>Ya esta en el carrito</h2>}
         </div>
     )
 }

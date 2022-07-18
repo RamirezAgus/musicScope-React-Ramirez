@@ -2,10 +2,10 @@ import React from 'react';
 import Item from '../Item/Item';
 import "./ItemList.css"
 
-const ItemList = ({productList}) => {
+const ItemList = ({ items }) => {
     return(
         <div className='d-flex justify-content-center align-items-center flex-wrap'>
-            {productList.map((products) =><Item key={products.id} products={products}/>)}
+            {items.map((item) => ( <Item key={item.id} item={item} />))}
         </div>
     )
 }

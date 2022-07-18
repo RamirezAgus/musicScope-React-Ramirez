@@ -18,7 +18,7 @@ const CartCustomProvider = ({ children }) => {
 
     useEffect(() => {
         getQtyProducts();
-    },[products]);
+    }, [products]);
 
     
     const addProducts = (product) => {
@@ -31,7 +31,8 @@ const CartCustomProvider = ({ children }) => {
         }else{
             setProducts([...products, product]);
         }
-    }
+    };
+
 
 
     const deleteProducts = (id) => { 
@@ -44,10 +45,12 @@ const CartCustomProvider = ({ children }) => {
         //const found = found.find(product => product.id === id);
        // return found ? true : false;
 
-       return products.some(products => products.id === id);
+       return products.some((prod) => prod.id === id);
     };
 
-
+    const totalProds = () => {
+        return products.reduce((acc, act) => acc + act.price * act.quantity, 0);
+    }
     
 
     const clear = () => {
@@ -56,10 +59,10 @@ const CartCustomProvider = ({ children }) => {
     };
 
     return (
-        <Provider value={{products, addProducts, deleteProducts, isInCart, clear, quantityProds}}>
+        <Provider value={{products, addProducts, deleteProducts, isInCart, clear, quantityProds, totalProds}}>
             {children}
         </Provider>
     )
-}
+};
 
 export default CartCustomProvider

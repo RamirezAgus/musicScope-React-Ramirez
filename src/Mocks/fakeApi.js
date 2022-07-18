@@ -1,6 +1,6 @@
 export 
 const products = [
-    {id: 1, name: 'Gibson LesPaul Custom', category: 'instrumentos', description: 'Custom Made', price: '90000', stock: '8', img:'/imgs/gibsonLesPaulCustom.png'},
+    {id: 1, name: 'Gibson LesPaul Custom', category: 'instrumentos', description: 'Custom Made', price: 90000, stock: 8, img:'/imgs/gibsonLesPaulCustom.png'},
     {id: 2, name: 'Gibson LesPaul Stardard', category: 'instrumentos', description: 'Standard Made', price: '70000', stock: '5', img:'/imgs/lespaulStandard.png'},
     {id: 3, name: 'Gibson LesPaul Studio', category: 'instrumentos', description: 'Studio Made', price: '45000', stock: '7', img:'/imgs/gibsonlespaulStudio.png'},
     {id: 4, name: 'Fender American Stratocaster', category: 'instrumentos', description: 'Standard Made', price: '85000', stock: '5', img:'/imgs/fenderStrato.png'},

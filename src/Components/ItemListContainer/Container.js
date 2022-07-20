@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getData, products } from "../../Mocks/fakeApi";
+//import { getData, products } from "../../Mocks/fakeApi";
 import { useParams } from "react-router-dom";
 import "./Container.css"
 import Spinner from "../Spinner/Spinner";
 import { db } from "../../Firebase/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([]);
@@ -15,8 +16,21 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         setLoading(true);
 
-        getData(categoryId)
-        .then((res) => {setProducts(res)})
+        const q = categoryId 
+        ? query(collection(db, 'productos'), where('category', '==', categoryId))
+        : collection(db, 'productos');
+
+
+        getDocs(q)
+        .then(res => {
+            const list = res.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    ...doc.data(),
+                }
+            })
+            setProducts(list);
+        })
         .catch((error) => {console.log(error)})
         .finally(() => {setLoading(false)})
     },[categoryId]);

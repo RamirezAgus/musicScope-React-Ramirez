@@ -11,11 +11,10 @@ const Cart = () => {
     }
 
     return (
-        <div className='d-flex flex-column'>
-            <div className='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center flex-column' style={{maxWidth:'600px'}}>
                 {products.map((prod) =>(
                     <div className='d-inline-flex border rounded m-3' key={prod.id}>
-                            <img src={prod.img} width='70px' alt='producto'/>
+                            <img src={prod.img} width='100px' alt='producto'/>
                         <div>
                             <h3>Producto: {prod.name}</h3>
                             <h3>${prod.price}</h3>
@@ -26,7 +25,6 @@ const Cart = () => {
                 ))}
                 <h3>Total: ${totalProds()}</h3>
             </div>
-        </div>
     )
 }
 

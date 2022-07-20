@@ -26,7 +26,7 @@ const ItemDetail = ({ product }) => {
                             <h2 className='card-tittle text-center'>{name}</h2>
                             <h1>${price}</h1>
                             <p className='card-text'>{description}</p>
-                            { goToCart ? <Link to='/cart' className='btn btn-primary'>Finalizar compra!</Link> : <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+                            { goToCart ? <Link to='/cart' className='btn btn-primary'>Ir al carrito!</Link> : <ItemCount initial={1} stock={stock} onAdd={onAdd} />
                             }
                             
                         </div>

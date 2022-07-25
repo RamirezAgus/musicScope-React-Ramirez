@@ -3,7 +3,6 @@ import Logo from "../Logo/Logo";
 import CartWidget from "../CartWidget/CartWidget"
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import SearchBar from "../SearchBar/SearchBar";
 
 const categories = [
     {
@@ -39,7 +38,6 @@ const NavBar = () => {
                     ))}
                 </ul>
                 <div className="d-flex" id="search">
-                    <SearchBar />
                 </div>
                 <Link className="d-flex align-items-center" to="/cart"><CartWidget /></Link>
         </nav>

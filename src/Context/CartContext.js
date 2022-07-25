@@ -14,10 +14,11 @@ const CartCustomProvider = ({ children }) => {
         let quantity = 0;
         products.forEach(product => quantity += product.quantity);
         setQuantityProds(quantity)
-    }
+    };
 
     useEffect(() => {
         getQtyProducts();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [products]);
 
     
@@ -42,15 +43,12 @@ const CartCustomProvider = ({ children }) => {
     
     
     const isInCart = (id) => {
-        //const found = found.find(product => product.id === id);
-       // return found ? true : false;
-
-       return products.some((prod) => prod.id === id);
+               return products.some((prod) => prod.id === id);
     };
 
     const totalProds = () => {
         return products.reduce((acc, act) => acc + act.price * act.quantity, 0);
-    }
+    };
     
 
     const clear = () => {

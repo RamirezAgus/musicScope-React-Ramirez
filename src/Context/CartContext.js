@@ -7,57 +7,67 @@ const { Provider } = cartContext;
 
 const CartCustomProvider = ({ children }) => {
 
-    const [products, setProducts] = useState([]);
+    const [productsCart, setProductsCart] = useState([]);
     const [quantityProds, setQuantityProds] = useState(0);
+    const [totalProducts, setTotalProducts] = useState(0);
 
     const getQtyProducts = () => {
         let quantity = 0;
-        products.forEach(product => quantity += product.quantity);
+        productsCart.forEach(product => quantity += product.quantity);
         setQuantityProds(quantity)
     };
+
+    const getTotalProducts = () => {
+        let total = 0;
+        productsCart.forEach((prod) => (total += prod.quantity * prod.price));
+        setTotalProducts(total)
+    };
+
+
+    useEffect(() => {
+        getTotalProducts();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [productsCart]);
 
     useEffect(() => {
         getQtyProducts();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [products]);
+    }, [productsCart]);
 
     
     const addProducts = (product) => {
         if(isInCart(product.id)){
-            const found = products.find(prod => prod.id === product.id);
-            const index = products.indexOf(found);
-            const aux = [...products];
+            const found = productsCart.find(prod => prod.id === product.id);
+            const index = productsCart.indexOf(found);
+            const aux = [...productsCart];
             aux[index].quantity += product.quantity;
-            setProducts(aux);
+            setProductsCart(aux);
         }else{
-            setProducts([...products, product]);
+            setProductsCart([...productsCart, product]);
         }
     };
 
 
 
     const deleteProducts = (id) => { 
-        setProducts(products.filter(products => products.id !== id));
+        setProductsCart(productsCart.filter(products => products.id !== id));
     };
      
     
     
     const isInCart = (id) => {
-               return products.some((prod) => prod.id === id);
+               return productsCart.some((prod) => prod.id === id);
     };
-
-    const totalProds = () => {
-        return products.reduce((acc, act) => acc + act.price * act.quantity, 0);
-    };
-    
+ 
 
     const clear = () => {
-        setProducts([]);
+        setProductsCart([]);
         setQuantityProds(0);
+        setTotalProducts(0);
     };
 
     return (
-        <Provider value={{products, addProducts, deleteProducts, isInCart, clear, quantityProds, totalProds}}>
+        <Provider value={{productsCart, addProducts, deleteProducts, isInCart, clear, quantityProds, totalProducts}}>
             {children}
         </Provider>
     )

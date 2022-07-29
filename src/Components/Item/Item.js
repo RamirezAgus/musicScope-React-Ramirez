@@ -7,9 +7,9 @@ import "./Item.css"
 
 const Item = ({ item }) => {
 
-    const { products } = useContext(cartContext);
+    const { productsCart } = useContext(cartContext);
 
-    const isInCart = products.some((prod) => prod.id === item.id)
+    const isInCart = productsCart.some((prod) => prod.id === item.id)
 
     return (
         <div className='card align-items-center' id='cards' style={{width:'10rem', height:'auto' ,margin:'1.5rem'}}>

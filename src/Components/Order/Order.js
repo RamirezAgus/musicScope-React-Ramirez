@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { cartContext } from '../../Context/CartContext';
 import { db } from '../../Firebase/firebase';
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 
 
 const Order = () => {
-    const { productsCart, deleteProducts, totalProducts } = useContext(cartContext);
+    const { productsCart, clear, totalProducts } = useContext(cartContext);
     const [idOrder, setIdOrder] = useState("");
     let navigate = useNavigate();
     const initialValues = {
@@ -55,16 +55,16 @@ const Order = () => {
 
 
     const sendBuy = () => {
-        swal({
+        Swal.fire({
             title: "Confirmacion de compra",
             text: `Recibimos su pedido, su identificador es ${idOrder} `,
             icon: "success",
-            button: "Aceptar",
+            confirmButtonText: "Aceptar",
           })
           .then((res) => {
             if (res.isConfirmed) {
-              deleteProducts();
-              return navigate('/');
+              clear();
+              return navigate("/");
             } 
           });
     };

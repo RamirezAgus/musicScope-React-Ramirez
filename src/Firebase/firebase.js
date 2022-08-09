@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAtN7Cc5TZ9htMtXnzd8bF00cGeuvml1_M",
-  authDomain: "music-scope.firebaseapp.com",
-  projectId: "music-scope",
-  storageBucket: "music-scope.appspot.com",
-  messagingSenderId: "932564995151",
-  appId: "1:932564995151:web:bbf5f34af62d459d19ae3a"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 

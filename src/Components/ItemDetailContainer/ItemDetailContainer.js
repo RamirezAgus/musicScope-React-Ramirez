@@ -1,15 +1,9 @@
 import React, { useEffect, useState} from 'react';
 import { getDoc, doc, collection } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
-//mport { getItem } from '../../Mocks/fakeApi';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 import { db } from '../../Firebase/firebase';
-
-
-// 1- Traer el servicio de firestore
-// 2- Crear un puntero al dato que queremos traer
-// 3- Traer el dato con una promesa
 
 
 

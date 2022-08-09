@@ -25,6 +25,7 @@ const ItemDetail = ({ product }) => {
                         <div className='card-body'>
                             <h2 className='card-tittle text-center'>{name}</h2>
                             <h1>${price}</h1>
+                            <span>Cantidad: {stock}</span>
                             <p className='card-text'>{description}</p>
                             { goToCart ? <Link to='/cart' className='btn btn-primary'>Ir al carrito!</Link> : <ItemCount initial={1} stock={stock} onAdd={onAdd} />
                             }

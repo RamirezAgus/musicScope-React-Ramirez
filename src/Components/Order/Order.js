@@ -77,14 +77,14 @@ const Order = () => {
 
 
     return (
-        <div className='container-form mt-5'>
+        <div className='container-form m-3'>
             <div className='row'>
                 <form className='card card-body' onSubmit={handleSubmit}>
-                    <h2>Ingreso de datos</h2>
+                    <h2 className='pb-3'>Ingreso de datos</h2>
                     <div className='form-group'>
                         <input 
                             type='text' 
-                            className='form-control mb-3' 
+                            className='form-control mb-3 p-2' 
                             placeholder='Ingresar nombre'
                             name='nombre'
                             onChange={handleInputChange}
@@ -92,7 +92,7 @@ const Order = () => {
                             />
                         <input 
                             type='text' 
-                            className='form-control mb-3'
+                            className='form-control mb-3 p-2'
                             placeholder='Ingrese apellido'
                             name='apellido'
                             onChange={handleInputChange}
@@ -100,7 +100,7 @@ const Order = () => {
                             />
                         <input 
                             type='text'
-                            className='form-control mb-3'
+                            className='form-control mb-3 p-2'
                             placeholder='ingrese email'
                             name='email'
                             onChange={handleInputChange}
@@ -108,7 +108,7 @@ const Order = () => {
                             />   
                         <input 
                             type='number'
-                            className='form-control mb-3'
+                            className='form-control mb-3 p-2'
                             placeholder='Ingrese numero de telefono'
                             name='telefono'
                             onChange={handleInputChange}
@@ -118,7 +118,6 @@ const Order = () => {
                     <button className='btn btn-primary'>Enviar compra</button>
                 </form>
             </div>
-
         </div>
     )
 }

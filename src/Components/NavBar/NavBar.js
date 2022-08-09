@@ -30,15 +30,14 @@ const categories = [
 const NavBar = () => {
     return (
         
-        <nav className="navbar navbar-expand-lg navbar-light bg-light" >
+        <nav className="d-flex justify-content-around navbar navbar-expand-lg navbar-light" >
             <Logo />
                 <ul>
                     {categories.map((cat) => (
                     <Link to={cat.path} className="nav-item" id="select" key={cat.id}>{cat.name}</Link>
                     ))}
                 </ul>
-                <div className="d-flex" id="search">
-                </div>
+
                 <Link className="d-flex align-items-center" to="/cart"><CartWidget /></Link>
         </nav>
     

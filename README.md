@@ -1,6 +1,10 @@
 # E-commerce Music Scope
 
-https://github.com/RamirezAgus
+https://music-scope.netlify.app
+
+# Repositorio
+
+https://github.com/RamirezAgus/musicScope-React-Ramirez
 
 ## Descripción del proyecto
 
